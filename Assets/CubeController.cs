@@ -22,9 +22,10 @@ public class CubeController : MonoBehaviour {
         }
 	}
 
-    private void OnTriggerEnter(Collider other){
-        if (other.gameObject.tag == "CubeTag" && other.gameObject.tag == "groundTag") {
+     void OnCollisionEnter2D(Collision2D col){
+        if (col.gameObject.tag == "CubeTag" || col.gameObject.tag == "groundTag") {
             GetComponent<AudioSource>().volume = 1; 
+
         }
     }
 }
