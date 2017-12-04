@@ -20,12 +20,14 @@ public class CubeController : MonoBehaviour {
         if (transform.position.x < this.deadLine) {
             Destroy (gameObject);
         }
-	}
-
-     void OnCollisionEnter2D(Collision2D col){
-        if (col.gameObject.tag == "CubeTag" || col.gameObject.tag == "groundTag") {
-            GetComponent<AudioSource>().volume = 1; 
-
-        }
     }
+
+     void OnCollisionEnter2D(Collision2D other){
+        if (other.gameObject.tag == "CubeTag" || other.gameObject.tag == "groundTag"){
+            GetComponent<AudioSource>().Play();
+        }
+     }
+
+        
+   
 }
